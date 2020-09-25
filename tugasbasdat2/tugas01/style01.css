@@ -1,0 +1,53 @@
+#background{
+    margin-top: -120px;
+    background: url(../img/aa.jpg);
+    background-size: cover;
+    padding-top: 111px;
+    height: 638px;
+    max-height: 1112px;
+}
+#background .jumbotron{
+    background: none;
+    margin-left: 137px;
+    max-width: 1000px;
+    margin-top: 22px;
+}
+
+#background .jumbotron h1{
+    font-family: raleway;
+    color: white;
+    /* margin-bottom: -12px;
+    margin-top: 27px;
+    padding-right: 307px; */
+    text-align: center;
+    margin-top: 50px;
+}
+
+#home .container h1{
+    text-align: center;
+    margin: 36px;
+}
+#home .container .row{
+    text-align: justify;
+    margin: 15px;
+}
+#home .container .row p{
+    text-indent: 0.3in;
+}
+img.tahapan{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+img.no3{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+#home .isi .container.atas{
+    background-color: aliceblue;
+    margin-top: -300px;
+    padding-bottom: 37px;
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style02.css">
+
+    <title>TUGAS 02</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-dark font-weight-bold" href="#">BASIS DATA II</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link js-scroll-trigger text-dark" href="../basdat2.html">HOME <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#tugas" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            TUGAS
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../../tugas/tbo.html">TBO</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../basdat2.html">Basis Data</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger text-dark" href="../profile/profile.html">PROFIL</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <!-- jumbotron -->
+    <div id="background">
+        <div class="jumbotron">
+            <h1>EVALUATION PLAN</h1>
+        </div>
+    </div>
+
+    <!-- jumbotron -->
+
+    <div id="home">
+        <div class="isi">
+            <div class="container atas">
+                <h1> ..</h1>
+                <h1>MySQL</h1>
+                <div class="row">
+                    <img class="mysql" src="mysql.jpg" height="200px" />
+                    <p>Ketika mengeksekusi suatu query, MySQL menyusun rencana apa saja yang akan dilakukan untuk
+                        mengeksekusi query tersbut. Rencana ini tertuang dalam Query Execution Plan (QEP). Dengan
+                        membaca QEP tersebut kita dapat menganalisa efektifitas suatu query. QEP ini dapat kita lihat
+                        dengan menggunakan statement Explain, misal:
+                    </p>
+                    <img class="mysql" src="mysql2.png" />
+                    <p>
+                        QEP ini menyajikan informasi detail baik untuk query sederhana maupun query yang kompleks yang
+                        melibatkan banyak tabel. Dengan mempelajari dan memahami setiap bagian dari QEP ini, kita dapat
+                        menganalisa bagian query mana yang perlu untuk dioptimasi.
+                    </p>
+                    <h4>Mengoptimalkan Query dengan EXPLAIN</h4>
+                    <p>Pernyataan EXPLAIN memberikan informasi tentang bagaimana MySQL menjalankan pernyataan:
+                    <ul>
+                        <li>EXPLAIN bekerja dengan pernyataan SELECT, DELETE, INSERT, REPLACE, dan UPDATE.</li>
+                        <li>Ketika EXPLAIN digunakan dengan pernyataan yang dapat dijelaskan, MySQL menampilkan
+                            informasi dari pengoptimal tentang rencana eksekusi pernyataan. Artinya, MySQL menjelaskan
+                            cara memproses pernyataan tersebut, termasuk informasi tentang bagaimana tabel digabungkan
+                            dan dalam urutan yang mana</li>
+                        <li>Ketika EXPLAIN digunakan dengan FOR CONNECTION connection_id daripada pernyataan yang dapat
+                            dijelaskan, ini akan menampilkan rencana eksekusi untuk pernyataan yang dieksekusi dalam
+                            koneksi bernama</li>
+                        <li>Untuk pernyataan SELECT, EXPLAIN menghasilkan informasi rencana eksekusi tambahan yang dapat
+                            ditampilkan menggunakan SHOW WARNINGS.</li>
+                        <li>EXPLAIN berguna untuk memeriksa kueri yang melibatkan tabel yang dipartisi</li>
+                        <li>Opsi FORMAT dapat digunakan untuk memilih format keluaran. TRADISIONAL menyajikan keluaran
+                            dalam format tabel. Ini adalah default jika tidak ada opsi FORMAT. Format JSON menampilkan
+                            informasi dalam format JSON.</li>
+                    </ul>
+                    </p>
+                    <p>Dengan bantuan EXPLAIN, Anda dapat melihat di mana Anda harus menambahkan indeks ke tabel
+                        sehingga pernyataan tersebut dieksekusi lebih cepat dengan menggunakan indeks untuk menemukan
+                        baris. Anda juga dapat menggunakan EXPLAIN untuk memeriksa apakah pengoptimal menggabungkan
+                        tabel dalam urutan yang optimal. Untuk memberi petunjuk kepada pengoptimal agar menggunakan
+                        perintah gabungan yang sesuai dengan urutan di mana tabel diberi nama dalam pernyataan SELECT,
+                        mulailah pernyataan tersebut dengan SELECT STRAIGHT_JOIN daripada hanya dengan SELECT. Namun,
+                        STRAIGHT_JOIN dapat mencegah penggunaan indeks karena menonaktifkan transformasi semijoin. </p>
+                </div>
+
+                <h1>PostgreSQL</h1>
+                <div class="row">
+                    <img class="postgresql" src="postgresql.png" height="200px" />
+                    <p>
+                        Perintah ini menampilkan rencana eksekusi yang dibuat oleh perencana PostgreSQL untuk pernyataan
+                        yang disediakan. Rencana eksekusi menunjukkan bagaimana tabel yang direferensikan oleh
+                        pernyataan akan dipindai - dengan pemindaian sekuensial biasa, pemindaian indeks, dll. - dan
+                        jika beberapa tabel direferensikan, algoritme gabungan apa yang akan digunakan untuk menyatukan
+                        baris yang diperlukan dari masing-masing tabel masukan.\
+                    <p>
+                        <img src="postgresql2.png" height="200px"></p>
+                    </p>
+                    <p>Bagian paling penting dari tampilan adalah perkiraan biaya eksekusi pernyataan, yang merupakan
+                        tebakan perencana berapa lama waktu yang dibutuhkan untuk menjalankan pernyataan (diukur dalam
+                        unit biaya yang sewenang-wenang, tetapi secara konvensional pengambilan halaman disk yang
+                        berarti). Sebenarnya ada dua angka yang ditampilkan: biaya awal sebelum baris pertama dapat
+                        dikembalikan, dan biaya total untuk mengembalikan semua baris. Untuk sebagian besar kueri, biaya
+                        total adalah yang terpenting, tetapi dalam konteks seperti subkueri di EXISTS, perencana akan
+                        memilih biaya permulaan terkecil daripada total biaya terkecil (karena pelaksana akan berhenti
+                        setelah mendapatkan satu baris). Juga, jika Anda membatasi jumlah baris untuk dikembalikan
+                        dengan klausa LIMIT, perencana membuat interpolasi yang sesuai antara biaya titik akhir untuk
+                        memperkirakan paket mana yang benar-benar termurah.</p>
+                    <p>Opsi ANALYZE menyebabkan pernyataan benar-benar dieksekusi, tidak hanya direncanakan. Kemudian
+                        statistik run time aktual ditambahkan ke tampilan, termasuk total waktu berlalu yang dihabiskan
+                        dalam setiap node rencana (dalam milidetik) dan jumlah total baris yang sebenarnya dikembalikan.
+                        Ini berguna untuk melihat apakah perkiraan perencana mendekati kenyataan.</p>
+                </div>
+
+                <h1>SQL Server</h1>
+                <img class="sqlserver" src="sqlserver.png" height="200px" />
+                <div class="row">
+                    <p>Cara SQL Server memilih plan terbaik adalah dengan menghitung cost estimation. Sebagai contoh,
+                        jika saya meminta Anda untuk menentukan yang mana yang merupakan plan yang terbaik, pertama
+                        indeks seek diikuti oleh key lookup atau kedua table scan., Anda mungkin akan menjawab yang
+                        pertama, tetapi itu tergantung pada jumlah data yang dikembalikan oleh query. Dengan kata lain
+                        itu tergantung pada jumlah data yang diambil. Jadi, query plan terbaik mempertimbangkan
+                        cardinality estimation berdasarkan input parameters dan dengan bantuan statistik</p>
+                    <p>Ketika optimizer membuat execution plan, ia melakukan parameter sniffing untuk mengetahui
+                        nilai-nilai parameternya. Ini bukan masalah; sebenarnya diperlukan untuk membuat plan yang
+                        terbaik. Masalah muncul ketika query menggunakan plan yang dibuat sebelumnya yang dioptimalkan
+                        untuk distribusi data yang berbeda</p>
+                    <h4>Workarounds untuk SQL Server Parameter Sniffing =></h4>
+                    <h6>
+                        <ul>
+                            <li>Buat Stored Procedures menggunakan Opsi WITH RECOMPILE</li>
+                            <li>Gunakan Hint OPTION (RECOMPILE)</li>
+                            <li>Gunakan Hint OPTION (OPTIMIZE FOR)</li>
+                            <li>Gunakan Dummy Variables pada Stored Procedures</li>
+                            <li>Nonaktifkan Parameter Sniffing pada Tingkat Instance</li>
+                            <li>Nonaktifkan Parameter Sniffing untuk Query tertentu</li>
+                        </ul>
+                    </h6>
+                    <p>Contohnya untuk Buat Stored Procedures menggunakan Opsi WITH RECOMPILE:</p>
+                    <img src="sqlserver2.png" height="300px" />
+                </div>
+
+                <h1>Oracle</h1>
+                <img class="oracle" src="oracle.png" />
+                <div class="row">
+                    <p>Suatu proses (query) sebelum dijalankan, database Oracle menentukan dulu mana langkah-langkah
+                        yang paling optimal (efektif dan efesien) yang akan dipilih. Contoh query yang melibatkan 5
+                        tabel, paling tidak ada 1×2×3×4×5 pilihan langkah (execution plan) tabel-table mana yang akan
+                        di-joint terlebih dahulu. Urutan join tentu saja menentukan resource (cost) yang akan dipakai.
+                        Untuk database dengan query yang kecil, tuning query dengan explain plan mungkin tidak begitu
+                        kelihatan manfaatnya. Namun untuk query yang melibatkan data besar-besaran, akan benar-benar
+                        terasa.</p>
+                    <p>Sebelum menjalankan query, kita bisa melihat “execution plan” mana yang akan dipilih oleh Oracle.
+                        Caranya adalah dengan menjalankan “explain plan”. Untuk dapat memanfaatkan feature explain plan
+                        ini, berikut langkah-langkahnya:
+                    <ol>
+                        <li>Pastikan bahwa instance parameter OPTIMIZER_MODE tidak sama dengan RULE. (Pilihan value
+                            untuk OPTIMIZER_MODE adalah rule, choose, all_rows, first_rows , first_rows_n). Kalau
+                            nilainya RULE, maka Oracle tidak akan menentukan execution plan berdasarkan cost-nya, tapi
+                            berdasarkan aturan (rule) default-nya Oracle.</li>
+                        <li>Jalankan script utlxplan.sql untuk membuat table plan. Ini dijalankan satu kali saja oleh
+                            user yang akan melakukan Explain Plan.</li>
+                        <img src="oracle1.png" height="25px" alt="">
+                        <li>Berikut ini contoh command untuk membuat plan dari suatu query</li>
+                        <img src="oracle2.png" height="60px" alt="">
+                        <li>Setelah itu, lihat execution plan-nya</li>
+                        <img src="oracle3.png" height="60px" alt="">
+                    </ol>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- container atas -->
+    <footer>
+        <div class="bg-dark">
+            <p class="text-white" align="center">Copyright &copy; 2020 </p>
+            <p class="text-white" align="center">Mardiani - D121181340</p>
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
